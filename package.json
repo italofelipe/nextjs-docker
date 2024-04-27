@@ -22,7 +22,7 @@
     "react-dom": "^18.2.0"
   },
   "engines": {
-    "node": "20.11.0"
+    "node": "18"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.2",
