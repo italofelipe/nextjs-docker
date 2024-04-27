@@ -1,0 +1,5 @@
+{
+  "globalEnvironmentVariables": {
+    "NODE_VERSION": "19.x"
+  }
+}
