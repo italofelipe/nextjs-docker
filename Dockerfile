@@ -22,11 +22,19 @@ FROM base AS development
 # Copiando os arquivos do projeto
 COPY . .
 
+# Copiar o script de entrypoint e dar permissão de execução
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Configurar script de entrypoint
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+
 # Executando comandos preparatórios se necessário
 RUN if [ -f pnpm-lock.yaml ]; then \
-      pnpm run prepare; \
+      pnpm install --frozen-lockfile --verbose; \
+    else \
+      echo "Lockfile not found." && exit 1; \
     fi
-
 # Expondo a porta 3000
 EXPOSE 3000
 
