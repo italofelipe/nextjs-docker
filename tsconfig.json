@@ -23,7 +23,7 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "jest.config.js.jss.jsjest.config.js.jsig.js.js", "jest.config.mjs", "jest.config.mjs"],
-  "exclude": ["cypress.config.ts", "cypress", "node_modules"],
+  "exclude": ["node_modules"],
   "ts-node": {
     "compilerOptions": {
       "module": "ESNext",
