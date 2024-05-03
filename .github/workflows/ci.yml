@@ -39,6 +39,10 @@ jobs:
         uses: microsoft/playwright-github-action@v1
         with:
           browser: all
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Start server
         run: pnpm run dev
       - name: Run Playwright tests
