@@ -1,9 +1,66 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react-hooks/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
   ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
   "rules": {
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "max-len": ["error", { "code": 100 }],
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "no-multi-spaces": "error",
+    "complexity": ["error", { "max": 10 }],
+    "max-params": ["error", { "max": 3 }],
+    "no-duplicate-imports": "error",
+    "no-unused-vars": "error",
+    "no-magic-numbers": [
+      "error",
+      { "ignore": [0, 1], "ignoreArrayIndexes": true }
+    ],
+    "sort-imports": [
+      "error",
+      { "ignoreCase": true, "ignoreDeclarationSort": true }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      { "callbacksLast": true, "shorthandFirst": true }
+    ],
+
+    "consistent-return": "error",
+    "no-return-await": "error",
+    "prefer-const": "error",
+    "no-implicit-coercion": "error",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

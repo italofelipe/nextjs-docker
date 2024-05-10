@@ -1,23 +1,35 @@
-import axios from "axios";
+import axios from 'axios';
 
 const fetchData = () => {
   return axios
-    .get<ApiResponse>("https://brapi.dev/api/quote/PETR4", {
+    .get<ApiResponse>('https://brapi.dev/api/quote/PETR4', {
       headers: {
         Authorization: `Bearer ${process.env.API_KEY}`,
       },
     })
     .then((res) => res.data)
     .catch((err) => {
-      console.error("Houve um erro", err);
+      console.error('Houve um erro', err);
+
       return null;
     });
 };
 
+const func = (arg1: number, arg2: number, arg3: number) => {
+  console.log(arg1);
+  console.log(arg2);
+  console.log(arg3);
+};
+const num2 = 2;
+const num3 = 3;
+func(1,num2,num3);
+
 const Home = async () => {
+  
   const data = await fetchData();
 
-  console.log("Data", data);
+  console.log('Data', data);
+
   return (
     <div>
       <h1>Ação: {data?.results[0].longName}</h1>

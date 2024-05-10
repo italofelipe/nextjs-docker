@@ -1,6 +1,6 @@
-interface ButtonProps extends React.ComponentProps<"button"> {
+interface ButtonProps extends React.ComponentProps<'button'> {
   children: React.ReactElement;
-  variant: "success" | "error";
+  variant: 'success' | 'error';
 }
 
 export const Button = ({ children, onClick, variant, ...props }: ButtonProps) => {
@@ -8,7 +8,7 @@ export const Button = ({ children, onClick, variant, ...props }: ButtonProps) =>
     <button
       onClick={onClick}
       {...props}
-      style={{ background: variant === "success" ? "#70cc7d" : "#f14343" }}
+      style={{ background: variant === 'success' ? '#70cc7d' : '#f14343' }}
     >
       {children}
     </button>
