@@ -15,14 +15,6 @@ const fetchData = () => {
     });
 };
 
-const func = (arg1: number, arg2: number, arg3: number) => {
-  console.log(arg1);
-  console.log(arg2);
-  console.log(arg3);
-};
-const num2 = 2;
-const num3 = 3;
-func(1,num2,num3);
 
 const Home = async () => {
   
@@ -32,7 +24,8 @@ const Home = async () => {
 
   return (
     <div>
-      <h1>Ação: {data?.results[0].longName}</h1>
+      <h1>Template Next.js com Docker</h1>
+      <h2>Ação: {data?.results[0].longName}</h2>
     </div>
   );
 };
