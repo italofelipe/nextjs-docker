@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpn run test:unit
+pnpm run test:unit
 pnpm run test:e2e
 
