@@ -7,7 +7,7 @@ RUN apk add --no-cache libc6-compat
 # Configurando o diretório de trabalho
 WORKDIR /app
 
-# Instalar o pnpm globalmente e preparar para instalação de pacotes
+# Instalar o pnpm globalmente
 RUN npm install -g pnpm
 
 # Instalar as dependências baseadas no arquivo de lock
@@ -35,8 +35,22 @@ RUN if [ -f pnpm-lock.yaml ]; then \
     else \
       echo "Lockfile not found." && exit 1; \
     fi
+
 # Expondo a porta 3000
 EXPOSE 3000
 
 # Comando para iniciar a aplicação
 CMD ["pnpm", "run", "dev"]
+
+FROM base AS production
+# Copiar apenas os arquivos necessários para produção
+COPY . .
+
+# Construir a aplicação Next.js
+RUN pnpm run build
+
+# Expondo a porta 3000
+EXPOSE 3000
+
+# Comando para iniciar a aplicação em modo produção
+CMD ["pnpm", "start"]

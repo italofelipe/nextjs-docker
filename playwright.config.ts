@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { defineConfig, devices } from '@playwright/test';
 
 /**

@@ -24,8 +24,8 @@ const Home = async () => {
 
   return (
     <div>
-      <h1>Template Next.js com Docker</h1>
-      <h2>Ação: {data?.results[0].longName}</h2>
+      <h1 className='font-metropolitan text-center w-4'>Template Next.js com Docker</h1>
+      <h2 className='font-metropolitan'>Ação: {data?.results[0].longName}</h2>
     </div>
   );
 };
